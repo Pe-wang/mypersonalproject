@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="gallery.css"> <!-- Link to your existing CSS -->
+    <title>Gallery - Pema Wangdi</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">My<span>Website</span></a>
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+                Pema <span>Wangdi</span>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="toggleDropdown()"></i>
+        </div>
+    </nav>
+
+    <!-- Dropdown Menu -->
+    <div class="dropdown" id="dropdown-menu">
+        <div class="links">
+            <a href="index.html" class="home-links">Home</a>
+            <i class="fa-solid fa-xmark cancel" onclick="toggleDropdown()"></i>
+        </div>
+    </div>
+
+    <!-- Gallery Content Section -->
+    <section class="gallery-section">
+        <h1>My Gallery</h1>
+        <div class="gallery-container" data-aos="fade-up" data-aos-duration="1500">
+            <div class="gallery-item profile-image">
+                <img src="image/profile.jpeg" alt="Profile Image">
+                <p class="image-description">This is my profile picture, taken at my favorite place!</p>
+            </div>
+            <div class="gallery-item">
+                <img src="image/fsherubtse.jpeg" alt="Gallery Image 1">
+                <p class="image-description">Beautiful view of Sherubtse, where I spent a memorable time.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="image/ama.jpeg" alt="Gallery Image 2">
+                <p class="image-description">A stunning sunset captured at Ama, one of my favorite spots.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="image/maymay.jpeg" alt="Gallery Image 3">
+                <p class="image-description">A lovely moment with friends, enjoying a clear day at Maymay.</p>
+            </div>
+            <div class="gallery-item">
+                <img src="image/family.jpeg" alt="Gallery Image 4">
+                <p class="image-description">A family gathering, full of laughter and great memories.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ offset: 0 });
+
+        // Toggle dropdown menu
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown-menu');
+            dropdown.classList.toggle('show');
+        }
+    </script>
+    <script src="index.js"></script>
+</body>
+</html>

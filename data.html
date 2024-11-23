@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Member Search</title>
+    <style>
+        table {
+            width: 70%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            /* Header color */
+            color: white;
+        }
+
+        .name-cell {
+            background-color: #FFDDC1;
+            /* Light coral */
+        }
+
+        .age-cell {
+            background-color: #C1E1FF;
+            /* Light blue */
+        }
+
+        .role-cell {
+            background-color: #FFD1DC;
+            /* Light pink */
+        }
+
+        .grade-cell {
+            background-color: #FFFACD;
+            /* Light yellow */
+        }
+
+        .email-cell {
+            background-color: #D1FFD6;
+            /* Light green */
+        }
+
+        .cid-cell {
+            background-color: #FFD700;
+            /* Gold */
+        }
+
+        button {
+            padding: 5px 10px;
+            margin: 2px;
+            cursor: pointer;
+        }
+
+        .edit-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .delete-btn {
+            background-color: #f44336;
+            color: white;
+        }
+        /* For smaller screens */
+@media (max-width: 768px) {
+    table {
+        width: 100%; /* Make the table take full width */
+        font-size: 14px; /* Reduce font size for readability */
+    }
+
+    th, td {
+        padding: 5px; /* Reduce padding to save space */
+    }
+
+    /* Stack input fields and buttons vertically */
+    label, input, button {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* Center the search section */
+    body {
+        padding: 10px;
+    }
+}
+
+    </style>
+    <script>
+        // Sample family data as JSON
+        const familyData = {
+            "my family": [
+                {
+                    "cid": "123456789",
+                    "name": "Kezang Tshering",
+                    "age": 49,
+                    "role": "Father",
+                    "grade": "No grade",
+                    "email": "kezang@gmail.com"
+                },
+                {
+                    "cid": "987654321",
+                    "name": "Yeshi Lhadon",
+                    "age": 51,
+                    "role": "Mother",
+                    "grade": "No grade",
+                    "email": "Lhaden@gmail.com"
+                },
+                {
+                    "cid": "112233445",
+                    "name": "Ugyen Tshomo",
+                    "age": 28,
+                    "role": "Eldest Sister",
+                    "grade": "Graduate",
+                    "email": "ugyengt@gmail.com"
+                },
+                {
+                    "cid": "112233445",
+                    "name": "Karma Dechen",
+                    "age": 24,
+                    "role": "Second Eledest Sister",
+                    "grage": "12 in 2021",
+                    "email": "karmadechen@gmail.com"
+                },
+                {
+                    "cid": "112233437",
+                    "name": "Pema Wangdi",
+                    "age": 20,
+                    "role": "Eldest Son",
+                    "grage": "Undergraduate",
+                    "email": "wangdipema@gmail.com"
+                },
+                {
+                    "cid": "112233490",
+                    "name": "Tshering Gyeltshen",
+                    "age": 18,
+                    "role": "Middle Son",
+                    "grage": "11",
+                    "email": "gyeltshen@gmail.com"
+                },
+                {
+                    "cid": "112233467",
+                    "name": "Ugyen Zangmo",
+                    "age": 16,
+                    "role": "Little Sister",
+                    "grage": "9",
+                    "email": "ugyen@gmail.com"
+                },
+                {
+                    "cid": "112233489",
+                    "name": "Ugyen Tenzin",
+                    "age": 7,
+                    "role": "yongest son",
+                    "grage": "3",
+                    "email": "tenzin@gmail.com"
+                }
+            ]
+        };
+
+        function renderTable() {
+            const tableBody = document.getElementById("tableBody");
+            tableBody.innerHTML = "";
+
+            familyData["my family"].forEach((member, index) => {
+                const row = `
+                    <tr>
+                        <td class="cid-cell">${member.cid}</td>
+                        <td class="name-cell">${member.name}</td>
+                        <td class="age-cell">${member.age}</td>
+                        <td class="role-cell">${member.role}</td>
+                        <td class="grade-cell">${member.grade}</td>
+                        <td class="email-cell">${member.email}</td>
+                        <td>
+                            <button class="edit-btn" onclick="editMember(${index})">Edit</button>
+                            <button class="delete-btn" onclick="deleteMember(${index})">Delete</button>
+                        </td>
+                    </tr>
+                `;
+                tableBody.innerHTML += row;
+            });
+        }
+
+        // Function to find and display family member info
+        function searchFamilyMember() {
+            const nameInput = document.getElementById("nameInput").value.trim();
+            const emailInput = document.getElementById("emailInput").value.trim().toLowerCase();
+
+            const member = familyData["my family"].find(m =>
+                m.name.toLowerCase() === nameInput.toLowerCase() && m.email.toLowerCase() === emailInput
+            );
+
+            if (member) {
+                alert(`Member Found: ${member.name}`);
+            } else {
+                alert("No family member found with that name and email.");
+            }
+        }
+
+        // Function to edit a family member's details
+        function editMember(index) {
+            const member = familyData["my family"][index];
+            const newName = prompt("Enter new name:", member.name);
+            const newAge = prompt("Enter new age:", member.age);
+            const newRole = prompt("Enter new role:", member.role);
+            const newGrade = prompt("Enter new grade:", member.grade);
+            const newEmail = prompt("Enter new email:", member.email);
+            const newCid = prompt("Enter new CID:", member.cid);
+
+            if (newName && newAge && newRole && newGrade && newEmail && newCid) {
+                familyData["my family"][index] = {
+                    name: newName,
+                    age: parseInt(newAge),
+                    role: newRole,
+                    grade: newGrade,
+                    email: newEmail,
+                    cid: newCid
+                };
+                renderTable();
+            }
+        }
+
+        // Function to delete a family member
+        function deleteMember(index) {
+            const confirmed = confirm("Are you sure you want to delete this member?");
+            if (confirmed) {
+                familyData["my family"].splice(index, 1);
+                renderTable();
+            }
+        }
+
+        // Initial table rendering
+        window.onload = renderTable;
+    </script>
+</head>
+
+<body>
+    <h1>Search for Family Member Information</h1>
+    <label for="nameInput">Name:</label>
+    <input type="text" id="nameInput" placeholder="Enter family member's name">
+    <br>
+    <label for="emailInput">Email:</label>
+    <input type="email" id="emailInput" placeholder="Enter family member's email">
+    <br><br>
+    <button onclick="searchFamilyMember()">Search</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>CID NO</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Role</th>
+                <th>Grade</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Rows will be appended here dynamically -->
+        </tbody>
+    </table>
+</body>
+
+</html>

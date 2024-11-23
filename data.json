@@ -1,0 +1,60 @@
+{
+    "my family": [
+        {
+            "name": "Kezang Tshering",
+            "age": 49,
+            "role": "father",
+            "grage": "No grade",
+            "email": "kezang@gmail.com"
+        },
+        {
+            "name": "Yeshi Lhadon",
+            "age": 51,
+            "role": "Mother",
+            "grage": "No grade",
+            "email": "Lhaden@gmail.com"
+        },
+        {
+            "name": "Ugyen Tshomo",
+            "age": 28,
+            "role": "Eldest Sister",
+            "grage": "Graduate",
+            "email": "ugyengt@gmail.com"
+        },
+        {
+            "name": "Karma Dechen",
+            "age": 24,
+            "role": "Second Eledest Sister",
+            "grage": "12 in 2021",
+            "email": "karmadechen@gmail.com"
+        },
+        {
+            "name": "Pema Wangdi",
+            "age": 20,
+            "role": "Eldest Son",
+            "grage": "Undergraduate",
+            "email": "wangdipema@gmail.com"
+        },
+        {
+            "name": "Tshering Gyeltshen",
+            "age": 18,
+            "role": "Middle Son",
+            "grage": "11",
+            "email": "gyeltshen@gmail.com"
+        },
+        {
+            "name": "Ugyen Zangmo",
+            "age": 16,
+            "role": "Little Sister",
+            "grage": "9",
+            "email": "ugyen@gmail.com"
+        },
+        {
+            "name": "Ugyen Tenzin",
+            "age": 7,
+            "role": "yongest son",
+            "grage": "3",
+            "email": "tenzin@gmail.com"
+        }
+    ]
+}

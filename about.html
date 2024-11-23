@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>About - Pema Wangdi</title>
+    <style>
+        /* Body Background and Text Colors */
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navigation Bar */
+        nav {
+            width: 100%;
+            height: 10vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background-color: #333;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        .nav-container .logo {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .nav-container .logo span {
+            color: #077b32;
+        }
+
+        .nav-container .links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-container .links a:hover,
+        .nav-container .links a.active {
+            color: #077b32;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        /* Left Column */
+        .about-left {
+            flex: 1 1 300px;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .image img {
+            width: 200px;
+            height: auto;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .image img:hover {
+            transform: scale(1.2);
+        }
+
+        h2,
+        p {
+            margin-top: 20px;
+        }
+
+        /* Right Column */
+        .about-right {
+            flex: 1 1 300px;
+            max-width: 400px;
+        }
+
+        .skills ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .skills li {
+            margin-bottom: 5px;
+        }
+
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #077b32;
+        }
+
+        /* Family Link Section */
+        .family-link {
+            margin-top: 2rem;
+        }
+
+        .family-link a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #077b32;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .family-link a:hover {
+            background-color: #055823;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-left,
+            .about-right {
+                max-width: 100%;
+            }
+
+            .image img {
+                width: 150px;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-container .logo {
+                font-size: 1.5rem;
+            }
+
+            .nav-container .links a {
+                margin: 10px 0;
+            }
+
+            .about-section {
+                padding: 3rem 1rem;
+            }
+
+            .skills li {
+                font-size: 0.9rem;
+            }
+
+            .social-links a {
+                font-size: 20px;
+            }
+
+            .family-link a {
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">My<span>Website</span></a>
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1500">
+                Pema <span>Wangdi</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
+                    <a href="index.html">Home</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="about-section">
+        <div class="about-container">
+            <!-- Left Column -->
+            <div class="about-left">
+                <div class="image" data-aos="zoom-out" data-aos-duration="3000">
+                    <img src="image/me1.jpeg" alt="Pema's Profile Picture">
+                </div>
+                <h2 data-aos="fade-left" data-aos-duration="1500" data-aos-delay="500">Hello, I'm Pema!</h2>
+                <p data-aos="fade-right" data-aos-duration="1500" data-aos-delay="700">
+                    I'm a passionate web developer with a love for creating clean, responsive websites.
+                    My expertise lies in front-end development, and I thrive on turning ideas into reality through code.
+                </p>
+            </div>
+
+            <!-- Right Column -->
+            <div class="about-right">
+                <div class="skills" data-aos="fade-up" data-aos-duration="1500">
+                    <h3>Skills & Expertise</h3>
+                    <ul>
+                        <li>HTML & CSS</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>React.js</li>
+                        <li>Responsive Design</li>
+                        <li>Web Animations (AOS, CSS Animations)</li>
+                        <li>Version Control (Git & GitHub)</li>
+                    </ul>
+                </div>
+                <div class="about-social-links" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="800">
+                    <h3>Connect With Me</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/" target="_blank"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Family Link -->
+        <div class="family-link" data-aos="fade-up" data-aos-duration="1500">
+            <a href="data.html">Do you want to know more about my family? Click here!</a>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ offset: 0 });
+    </script>
+</body>
+
+</html>

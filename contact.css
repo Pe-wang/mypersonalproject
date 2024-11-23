@@ -1,0 +1,128 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Navigation */
+nav {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #333;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.nav-container .logo {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.nav-container .logo span {
+    color: #077b32;
+}
+
+.nav-container .links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-container .links a:hover, .nav-container .links a.active {
+    color: #077b32;
+}
+
+/* Contact Section */
+.contact-section {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 30px;
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 123, 50, 0.5);
+}
+
+h1 {
+    text-align: center;
+    color: #077b32;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #077b32;
+    background-color: #333;
+    color: white;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+    height: 150px;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #077b32;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: white;
+    color: #077b32;
+    border: 2px solid #077b32;
+}
+
+#response-message {
+    margin-top: 20px;
+    text-align: center;
+    color: #077b32;
+}
+
